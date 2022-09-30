@@ -89,7 +89,7 @@ router.get('/', verify, async (req, res) => {
   if (req.user.isAdmin) {
     try {
       const movies = await Movie.find();
-      res.status(200).json(movies);
+      res.status(200).json(movies.reverse());
     } catch (err) {
       res.status(500).json(err);
     }
